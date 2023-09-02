@@ -13,7 +13,18 @@ namespace Labworks_Ammo_Saver
             base.OnLateInitializeMelon();
             BonelibCreator.CreateBoneMenu();
 
-            BoneLib.Hooking.OnLevelInitialized += BonelibCreator.LevelInitialized;
+            BoneLib.Hooking.OnLevelInitialized += LevelInitialized;
+        }
+
+        internal static void LevelInitialized(LevelInfo info)
+        {
+            string palletTitle = SceneStreamer.Session.Level.Pallet.Title;
+            string barcodeTitle = SceneStreamer.Session.Level.Barcode;
+            if (palletTitle == "LabWorksBoneworksPort" && barcodeTitle != "volx4.LabWorksBoneworksPort.Level.BoneworksRedactedChamber" && barcodeTitle != "volx4.LabWorksBoneworksPort.Level.BoneworksMainMenu")
+            {
+                MelonLogger.Msg("Level is Labworks!");
+                AmmoFunctions.SetAmmo();
+            }
         }
     }
 }

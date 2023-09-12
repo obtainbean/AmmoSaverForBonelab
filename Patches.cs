@@ -14,8 +14,7 @@ namespace Labworks_Ammo_Saver
         {
             string previousTitle = SceneStreamer.Session.Level.Pallet.Title;
             string barcode = SceneStreamer.Session.Level.Barcode;
-            if (previousTitle == "LabWorksBoneworksPort" && barcode != "volx4.LabWorksBoneworksPort.Level.BoneworksRedactedChamber" && barcode != "volx4.LabWorksBoneworksPort.Level.BoneworksMainMenu")
-            {
+        
                 AmmoFunctions.SaveAmmo();
             }
         }

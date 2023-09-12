@@ -1,2 +1,2 @@
-# LabworksAmmoSaver
-Saves ammo throughout Labworks... fairly self explanitory.
+# BONELABAmmoSaver
+Version of LabworksAmmoSaver that works across all levels
